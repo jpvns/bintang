@@ -1,0 +1,23 @@
+{
+  "name": "Sistem BINTANG JPVNS",
+  "short_name": "BINTANG",
+  "description": "Sistem Bantuan Industri Ternakan",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#1E3A8A",
+  "theme_color": "#1E3A8A",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/t4WbgCLC/rty.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.postimg.cc/t4WbgCLC/rty.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
