@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cetak Poster Argrow</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 { font-size: 20px; color: #0d2b5e; margin-bottom: 12px; }
+    p { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 20px; }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      font-size: 18px;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-bottom: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .btn-green { background: #5daa3a; color: #fff; }
+    .btn-gold { background: #d4a82a; color: #1a1a1a; }
+    ol { text-align: left; font-size: 13px; color: #444; line-height: 1.8; padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Poster Argrow A1</h1>
+    <p>Pilih salah satu butang di bawah:</p>
+    <a class="btn btn-green" href="poster-argrow-a1.html">1. Buka Poster</a>
+    <button class="btn btn-gold" type="button" onclick="openAndPrint()">2. Buka &amp; Cetak PDF</button>
+    <ol>
+      <li>Tekan butang di atas</li>
+      <li>Dalam tetingkap baru: <strong>Ctrl+P</strong> (Windows) atau <strong>Cmd+P</strong> (Mac)</li>
+      <li>Destinasi: <strong>Simpan sebagai PDF</strong></li>
+      <li>Saiz kertas: <strong>A1</strong></li>
+      <li>Margin: <strong>Tiada</strong></li>
+      <li>Centang <strong>Grafik latar belakang</strong></li>
+    </ol>
+  </div>
+  <script>
+    function openAndPrint() {
+      var w = window.open('poster-argrow-a1.html', '_blank');
+      if (w) {
+        w.addEventListener('load', function () {
+          setTimeout(function () { w.print(); }, 800);
+        });
+      }
+    }
+  </script>
+</body>
+</html>
