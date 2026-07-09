@@ -1,12 +1,27 @@
 # Poster Argrow A1
 
+## ⬇️ MUAT TURUN TERUS (PALING MUDAH)
+
+**Klik fail ini untuk muat turun PDF — tak perlu buka HTML:**
+
+👉 **[Poster-Argrow-A1.pdf](Poster-Argrow-A1.pdf)** (532 KB, saiz A1)
+
+👉 Pratonton gambar: **[Poster-Argrow-A1-preview.png](Poster-Argrow-A1-preview.png)**
+
+👉 Dari GitHub (telefon/komputer):  
+`https://github.com/jpvns/bintang/raw/cursor/argrow-poster-a1-7b1d/poster-argrow/Poster-Argrow-A1.pdf`
+
+Buka link di atas → PDF akan muat turun → hantar ke kedai cetak **A1 Portrait**.
+
+---
+
 Poster **MAKANAN KITA, TANGGUNGJAWAB KITA** — saiz A1 Portrait (594 × 841 mm).
 
-## Cara buka (PILIH SATU)
+## Cara buka HTML (jika mahu edit)
 
-### A — Telefon / Komputer (paling mudah)
-1. Buka fail **`index.html`** — ada butang besar **Buka Poster** dan **Cetak PDF**
-2. Atau buka **`print.html`** — panduan cetak langkah demi langkah
+### A — Telefon / Komputer
+1. Buka **`muat-turun.html`** — butang muat turun PDF
+2. Atau **`index.html`** — pratonton + cetak
 
 ### B — Dua klik fail
 - Windows/Mac: pergi folder `poster-argrow` → klik dua kali **`index.html`**
