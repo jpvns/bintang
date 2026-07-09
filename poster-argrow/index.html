@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poster Argrow — Pratonton</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #1a1a2e;
+      min-height: 100vh;
+      color: #fff;
+    }
+    .toolbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: #0d2b5e;
+      padding: 12px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,.4);
+    }
+    .toolbar h1 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-right: auto;
+      color: #f0d078;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      min-height: 48px;
+      min-width: 140px;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #5daa3a, #3d7a28);
+      color: #fff;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #d4a82a, #b8860b);
+      color: #1a1a1a;
+    }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #f0d078;
+    }
+    .btn:active { transform: scale(0.97); opacity: 0.9; }
+    .wrap {
+      padding: 90px 12px 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .scale-box {
+      transform-origin: top center;
+      box-shadow: 0 8px 40px rgba(0,0,0,.5);
+    }
+    .hint {
+      text-align: center;
+      padding: 8px 16px 0;
+      font-size: 13px;
+      color: #aaa;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    @media print {
+      .toolbar, .hint { display: none !important; }
+      .wrap { padding: 0; }
+      .scale-box { transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <h1>Poster Argrow A1</h1>
+    <a class="btn btn-primary" href="poster-argrow-a1.html" target="_blank" rel="noopener">
+      Buka Poster Penuh
+    </a>
+    <button class="btn btn-gold" type="button" id="btnPrint">
+      Cetak / Simpan PDF
+    </button>
+    <button class="btn btn-outline" type="button" id="btnFit">
+      Muat Skrin
+    </button>
+  </div>
+
+  <p class="hint">
+    Tekan <strong>Buka Poster Penuh</strong> jika pratonton tidak kelihatan.
+    Untuk cetak: tekan <strong>Cetak / Simpan PDF</strong> → pilih <strong>A1</strong> → Simpan sebagai PDF.
+  </p>
+
+  <div class="wrap">
+    <div class="scale-box" id="scaleBox">
+      <iframe
+        id="posterFrame"
+        src="poster-argrow-a1.html"
+        title="Poster Argrow"
+        style="width:594mm;height:841mm;border:none;display:block;background:#fff;"
+      ></iframe>
+    </div>
+  </div>
+
+  <script>
+    const scaleBox = document.getElementById('scaleBox');
+    const frame = document.getElementById('posterFrame');
+
+    function fitToScreen() {
+      const toolbarH = 100;
+      const w = window.innerWidth - 24;
+      const h = window.innerHeight - toolbarH - 40;
+      const posterW = 594 * 3.7795275591;
+      const posterH = 841 * 3.7795275591;
+      const scale = Math.min(w / posterW, h / posterH, 1);
+      scaleBox.style.transform = 'scale(' + scale + ')';
+      scaleBox.style.marginBottom = ((posterH * scale) - posterH) + 'px';
+    }
+
+    document.getElementById('btnFit').addEventListener('click', fitToScreen);
+    document.getElementById('btnPrint').addEventListener('click', function () {
+      const w = frame.contentWindow;
+      if (w) {
+        w.focus();
+        w.print();
+      } else {
+        window.open('poster-argrow-a1.html', '_blank');
+      }
+    });
+
+    window.addEventListener('resize', fitToScreen);
+    frame.addEventListener('load', fitToScreen);
+    fitToScreen();
+  </script>
+</body>
+</html>

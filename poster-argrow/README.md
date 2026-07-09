@@ -2,9 +2,27 @@
 
 Poster **MAKANAN KITA, TANGGUNGJAWAB KITA** — saiz A1 Portrait (594 × 841 mm).
 
+## Cara buka (PILIH SATU)
+
+### A — Telefon / Komputer (paling mudah)
+1. Buka fail **`index.html`** — ada butang besar **Buka Poster** dan **Cetak PDF**
+2. Atau buka **`print.html`** — panduan cetak langkah demi langkah
+
+### B — Dua klik fail
+- Windows/Mac: pergi folder `poster-argrow` → klik dua kali **`index.html`**
+- Pastikan dibuka dalam **Chrome** atau **Edge** (bukan dalam app WhatsApp/Telegram)
+
+### C — Jika butang tak berfungsi
+1. Klik kanan `poster-argrow-a1.html` → **Open with** → **Google Chrome**
+2. Atau seret fail ke tetingkap Chrome
+
 ## Fail utama
 
-- `poster-argrow-a1.html` — buka dalam pelayar, cetak ke PDF
+| Fail | Fungsi |
+|------|--------|
+| `index.html` | **MULA DI SINI** — pratonton + butang cetak |
+| `print.html` | Halaman butang cetak ringkas |
+| `poster-argrow-a1.html` | Poster A1 penuh |
 
 ## Cara guna
 
