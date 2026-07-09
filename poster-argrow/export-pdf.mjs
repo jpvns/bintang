@@ -23,8 +23,11 @@ await page.pdf({
   margin: { top: 0, right: 0, bottom: 0, left: 0 },
 });
 
-await page.setViewport({ width: 1200, height: 1700, deviceScaleFactor: 2 });
-await page.screenshot({ path: pngPath, fullPage: true });
+const w = Math.round((594 * 96) / 25.4);
+const h = Math.round((841 * 96) / 25.4);
+
+await page.setViewport({ width: w, height: h, deviceScaleFactor: 1 });
+await page.screenshot({ path: pngPath, clip: { x: 0, y: 0, width: w, height: h } });
 
 await browser.close();
 console.log('PDF:', pdfPath);
