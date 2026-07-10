@@ -16,7 +16,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 1000;
-      background: #0d2b5e;
+      background: #134e4a;
       padding: 12px 16px;
       display: flex;
       flex-wrap: wrap;
@@ -29,7 +29,7 @@
       font-size: 14px;
       font-weight: 700;
       margin-right: auto;
-      color: #f0d078;
+      color: #eab308;
     }
     .btn {
       display: inline-flex;
@@ -48,17 +48,17 @@
       touch-action: manipulation;
     }
     .btn-primary {
-      background: linear-gradient(135deg, #5daa3a, #3d7a28);
+      background: linear-gradient(135deg, #0f766e, #134e4a);
       color: #fff;
     }
     .btn-gold {
-      background: linear-gradient(135deg, #d4a82a, #b8860b);
+      background: linear-gradient(135deg, #eab308, #ca8a04);
       color: #1a1a1a;
     }
     .btn-outline {
       background: transparent;
       color: #fff;
-      border: 2px solid #f0d078;
+      border: 2px solid #eab308;
     }
     .btn:active { transform: scale(0.97); opacity: 0.9; }
     .wrap {
@@ -75,10 +75,11 @@
       padding: 8px 16px 0;
       font-size: 13px;
       color: #aaa;
-      max-width: 600px;
+      max-width: 640px;
       margin: 0 auto;
       line-height: 1.5;
     }
+    .hint a { color: #eab308; }
     @media print {
       .toolbar, .hint { display: none !important; }
       .wrap { padding: 0; }
@@ -90,7 +91,7 @@
 
   <div class="toolbar">
     <h1>Poster Argrow A1</h1>
-    <a class="btn btn-primary" href="poster-argrow-a1.html" target="_blank" rel="noopener">
+    <a class="btn btn-primary" href="poster-a1-kad.html" target="_blank" rel="noopener">
       Buka Poster Penuh
     </a>
     <button class="btn btn-gold" type="button" id="btnPrint">
@@ -103,14 +104,14 @@
 
   <p class="hint">
     Tekan <strong>Buka Poster Penuh</strong> jika pratonton tidak kelihatan.
-    Untuk cetak: tekan <strong>Cetak / Simpan PDF</strong> → pilih <strong>A1</strong> → Simpan sebagai PDF.
+    Untuk cetak: tekan <strong>Cetak / Simpan PDF</strong> → pilih saiz <strong>A1</strong> → Simpan sebagai PDF → centang <strong>Background graphics</strong>.
   </p>
 
   <div class="wrap">
     <div class="scale-box" id="scaleBox">
       <iframe
         id="posterFrame"
-        src="poster-argrow-a1.html"
+        src="poster-a1-kad.html"
         title="Poster Argrow"
         style="width:594mm;height:841mm;border:none;display:block;background:#fff;"
       ></iframe>
@@ -139,7 +140,7 @@
         w.focus();
         w.print();
       } else {
-        window.open('poster-argrow-a1.html', '_blank');
+        window.open('poster-a1-kad.html', '_blank');
       }
     });
 

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster A1 - Argrow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Tetapan Asas Poster A1 */
+        @page {
+            size: A1 portrait;
+            margin: 0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            background: #888;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            width: 594mm;
+            height: 841mm;
+            background-color: #f4f6f4;
+            color: #2d3748;
+            padding: 20mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 12px auto;
+            box-shadow: 0 8px 40px rgba(0,0,0,.25);
+        }
+
+        /* Skema Warna Seragam */
+        :root {
+            --primary-green: #134e4a;
+            --secondary-green: #0f766e;
+            --accent-gold: #eab308;
+            --light-bg: #ffffff;
+            --text-dark: #1e293b;
+            --border-color: #cbd5e1;
+        }
+
+        /* HEADER */
+        header {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 20mm;
+            border-radius: 10mm;
+            text-align: center;
+            margin-bottom: 15mm;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42pt;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 5mm;
+            color: white;
+        }
+        header .slogan {
+            font-size: 20pt;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8mm;
+        }
+        header .quote {
+            font-style: italic;
+            font-size: 16pt;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5mm 10mm;
+            border-radius: 5mm;
+            display: inline-block;
+            max-width: 80%;
+            border-left: 5px solid var(--accent-gold);
+        }
+
+        /* SUSUNAN UTAMA (GRID COLUMN) */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15mm;
+            flex-grow: 1;
+        }
+
+        .left-column, .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15mm;
+        }
+
+        /* KOTAK KANDUNGAN (CARD) */
+        .card {
+            background: var(--light-bg);
+            border-radius: 8mm;
+            padding: 12mm;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24pt;
+            font-weight: 700;
+            color: var(--primary-green);
+            border-bottom: 3px solid var(--accent-gold);
+            padding-bottom: 3mm;
+            margin-bottom: 6mm;
+            text-transform: uppercase;
+        }
+
+        /* MENGENAI ARGROW */
+        .argrow-subtitle {
+            font-size: 16pt;
+            font-weight: 700;
+            color: var(--secondary-green);
+            margin-bottom: 4mm;
+        }
+        .card p {
+            font-size: 14pt;
+            line-height: 1.6;
+            margin-bottom: 5mm;
+            text-align: justify;
+        }
+        .card strong {
+            color: var(--primary-green);
+        }
+
+        /* PROFIL USAHAWAN */
+        .profile-container {
+            display: flex;
+            gap: 8mm;
+        }
+        .profile-text {
+            flex: 1;
+        }
+        .profile-img-placeholder {
+            width: 50mm;
+            height: 65mm;
+            background: #e2e8f0;
+            border-radius: 5mm;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            font-size: 12pt;
+            color: #64748b;
+            border: 2px dashed var(--secondary-green);
+        }
+        .info-list {
+            list-style: none;
+        }
+        .info-list li {
+            font-size: 14pt;
+            margin-bottom: 4mm;
+            line-height: 1.5;
+        }
+        .info-list li strong {
+            display: inline-block;
+            width: 55mm;
+            color: var(--secondary-green);
+        }
+
+        /* FASA PEMBANGUNAN (TIMELINE) */
+        .timeline {
+            position: relative;
+            padding-left: 8mm;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 3mm;
+            top: 2mm;
+            bottom: 2mm;
+            width: 1mm;
+            background: var(--accent-gold);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 6mm;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6.5mm;
+            top: 2mm;
+            width: 4mm;
+            height: 4mm;
+            background: var(--primary-green);
+            border-radius: 50%;
+        }
+        .timeline-year {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18pt;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 1mm;
+        }
+        .timeline-desc {
+            font-size: 13pt;
+            line-height: 1.5;
+        }
+
+        /* PRODUK & PERKHIDMATAN */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6mm;
+        }
+        .product-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 5mm;
+            border-radius: 4mm;
+        }
+        .product-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16pt;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 1mm;
+        }
+        .product-name {
+            font-size: 14pt;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 2mm;
+        }
+        .product-desc {
+            font-size: 12pt;
+            line-height: 1.4;
+        }
+        .highlight-box {
+            grid-column: span 2;
+            background: #fef08a;
+            border: 1px solid var(--accent-gold);
+            padding: 5mm;
+            border-radius: 4mm;
+            margin-top: 2mm;
+        }
+        .highlight-title {
+            font-weight: 700;
+            color: #854d0e;
+            font-size: 13pt;
+            margin-bottom: 2mm;
+        }
+        .highlight-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2mm;
+            list-style-type: disc;
+            padding-left: 5mm;
+            font-size: 11pt;
+            font-weight: 600;
+        }
+
+        /* FOOTER (JPVNS & PEGAWAI) */
+        footer {
+            margin-top: 15mm;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15mm;
+        }
+        .officer-profile {
+            display: flex;
+            gap: 6mm;
+            align-items: center;
+        }
+        .officer-img {
+            width: 35mm;
+            height: 45mm;
+            background: #e2e8f0;
+            border-radius: 4mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11pt;
+            color: #64748b;
+            border: 2px dashed var(--secondary-green);
+        }
+        .officer-details h3 {
+            font-size: 16pt;
+            color: var(--primary-green);
+            margin-bottom: 1mm;
+        }
+        .officer-details p {
+            font-size: 12pt;
+            margin-bottom: 1mm;
+        }
+        .support-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5mm;
+        }
+        .support-item h4 {
+            font-size: 13pt;
+            color: var(--secondary-green);
+            margin-bottom: 1mm;
+        }
+        .support-item p {
+            font-size: 11pt;
+            line-height: 1.4;
+        }
+
+        @media print {
+            html { background: none; }
+            body {
+                margin: 0;
+                box-shadow: none;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER BANNER -->
+    <header>
+        <h1>MAKANAN KITA TANGGUNGJAWAB KITA</h1>
+        <div class="slogan">MEMBINA MASA DEPAN • MENJAMIN KESELAMATAN MAKANAN NEGARA</div>
+        <div class="quote">“If you know the enemy and know yourself, you need not fear the result of a hundred battles.” – Encik Mohamed Adib bin Abdul Razak</div>
+    </header>
+
+    <!-- UTAMA: 2 LAJUR -->
+    <div class="main-content">
+        
+        <!-- LAJUR KIRI -->
+        <div class="left-column">
+            <!-- MENGENAI ARGROW -->
+            <div class="card">
+                <div class="card-title">Mengenai Argrow</div>
+                <div class="argrow-subtitle">PENERAJU PENTERNAKAN HALAL YANG MODEN DAN MAMPAN</div>
+                <p>Ditubuhkan pada Mei 2023 di bawah jenama Argrow, <strong>Afdal Rezeki Sdn. Bhd.</strong> merupakan sebuah syarikat penternakan yang memfokuskan kepada pembiakan kambing dan biri-biri premium. Bermula dengan pasaran <strong>Aqiqah, Qurban</strong> dan <strong>komersial</strong>, Argrow kini berkembang sebagai penyedia perkhidmatan dan penyelesaian penternakan yang lengkap.</p>
+                <p>Berteraskan aspirasi membangunkan ekosistem <strong>penternakan halal yang moden dan mampan</strong>, Argrow komited <strong>memperkukuh rantaian bekalan</strong>, <strong>membangunkan hab ternakan</strong> serta menghasilkan <strong>produk bernilai tambah</strong> bagi menyokong agenda <strong>keselamatan makanan negara</strong>.</p>
+            </div>
+
+            <!-- FASA PEMBANGUNAN -->
+            <div class="card">
+                <div class="card-title">Fasa Pembangunan</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2022 - PERMULAAN</div>
+                        <div class="timeline-desc">Pembinaan ladang ternakan pertama di Rantau, Negeri Sembilan.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023 - PENUBUHAN</div>
+                        <div class="timeline-desc">Penubuhan Afdal Rezeki Sdn. Bhd. dan memulakan aktiviti perdagangan ternakan.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024 - PENGEMBANGAN</div>
+                        <div class="timeline-desc">Pemerolehan ladang kambing di Semenyih, penubuhan pusat pembiakan biri-biri di Kuala Pilah, serta pelancaran jenama Berek Birri™.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025 - PEMERKASAAN</div>
+                        <div class="timeline-desc">Pelancaran Berek Birri™ Yani (Ready-to-Eat) & Jus Asam Jawa, penubuhan pusat pembiakan di Batu Pahat, Johor, serta pengembangan produk hiliran.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LAJUR KANAN -->
+        <div class="right-column">
+            <!-- PROFIL USAHAWAN -->
+            <div class="card">
+                <div class="card-title">Profil Usahawan</div>
+                <div class="profile-container">
+                    <div class="profile-text">
+                        <ul class="info-list">
+                            <li><strong>Nama:</strong> Encik Mohamed Adib bin Abdul Razak</li>
+                            <li><strong>Umur:</strong> 35 Tahun</li>
+                            <li><strong>Lokasi Ladang:</strong> Berek Birri, Lot 4677, Kampung Kabong, 73100 Johol, Kuala Pilah, N. Sembilan</li>
+                            <li><strong>ID Premis:</strong> N07292</li>
+                            <li><strong>Pendidikan:</strong> Ijazah Sarjana Muda Teknologi Maritim, UPM (2013)</li>
+                            <li><strong>Kerjaya Lepas:</strong> Pesara Tentera Laut Diraja Malaysia (TLDM)</li>
+                            <li><strong>Pengalaman:</strong> 3 Tahun</li>
+                        </ul>
+                    </div>
+                    <div class="profile-img-placeholder">
+                        [ Letak Gambar<br>Encik Adib Di Sini ]
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUK & PERKHIDMATAN -->
+            <div class="card">
+                <div class="card-title">Produk & Perkhidmatan</div>
+                <div class="product-grid">
+                    <div class="product-box">
+                        <div class="product-num">01</div>
+                        <div class="product-name">BEREK BIRRI™</div>
+                        <div class="product-desc">Program pembiakan biri-biri premium merangkumi pembekalan baka, latihan, khidmat nasihat & agro-edukasi.</div>
+                    </div>
+                    <div class="product-box">
+                        <div class="product-num">02</div>
+                        <div class="product-name">ARGROW FARM</div>
+                        <div class="product-desc">Pembekalan kambing, biri-biri, lembu dan unta bagi pembiakan, Aqiqah, Qurban & pasaran komersial.</div>
+                    </div>
+                    <div class="product-box">
+                        <div class="product-num">03</div>
+                        <div class="product-name">ARGROW FOOD</div>
+                        <div class="product-desc">Produk makanan halal bernilai tambah: daging perap, sedia dimakan (RTE), sejuk beku & minuman Argrow.</div>
+                    </div>
+                    <div class="product-box">
+                        <div class="product-num">04</div>
+                        <div class="product-name">ARGROW NAPIER</div>
+                        <div class="product-desc">Pembekalan rumput Napier berkualiti tinggi sebagai sumber makanan ternakan yang lestari dan mampan.</div>
+                    </div>
+                    <!-- HIGHLIGHT KUNING -->
+                    <div class="highlight-box">
+                        <div class="highlight-title">APA ITU BEREK BIRRI™ ? (Penternakan Kontrak Moden)</div>
+                        <ul class="highlight-list">
+                            <li>Kontrak penternakan strategik</li>
+                            <li>Urus ternakan tanpa perlu jaga sendiri</li>
+                            <li>Pantau guna sistem digital MyBirri™</li>
+                            <li>Sesuai untuk agropreneur baru & komuniti</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER BAHAGIAN BAWAH -->
+    <footer>
+        <!-- PEGAWAI PENGEMBANGAN -->
+        <div class="card">
+            <div class="card-title">Pegawai Pengembangan</div>
+            <div class="officer-profile">
+                <div class="officer-img">
+                    [ Gambar<br>Puan Nur Azrin ]
+                </div>
+                <div class="officer-details">
+                    <h3>PUAN NUR AZRIN BINTI MOHD NOOR</h3>
+                    <p><strong>Jawatan:</strong> Penolong Pegawai Veterinar G5</p>
+                    <p><strong>Pejabat:</strong> Pejabat Perkhidmatan Veterinar Daerah Kuala Pilah</p>
+                    <p><strong>Tempoh Khidmat:</strong> 15 Tahun (2008 - Kini)</p>
+                    <p style="font-size: 11pt; color: #475569; margin-top: 2mm;">
+                        • 2008: Bhgn Industri Ternakan JPVNS<br>
+                        • 2009-2010: Institut Veterinar Malaysia, Kluang<br>
+                        • 2011-2024: PPV Daerah Jempol<br>
+                        • 2024-Kini: PPV Daerah Kuala Pilah
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SOKONGAN JPVNS -->
+        <div class="card">
+            <div class="card-title">Sokongan JPVNS</div>
+            <div class="support-grid">
+                <div class="support-item">
+                    <h4>KHIDMAT NASIHAT</h4>
+                    <p>Khidmat nasihat teknikal dan bimbingan berterusan oleh pegawai veterinar JPVNS.</p>
+                </div>
+                <div class="support-item">
+                    <h4>LATIHAN DAN KURSUS</h4>
+                    <p>Penyertaan dalam kursus bagi meningkatkan pengetahuan serta kemahiran penternakan.</p>
+                </div>
+                <div class="support-item">
+                    <h4>PEMANTAUAN PROGRAM</h4>
+                    <p>Pemantauan berkala bagi memastikan pelaksanaan projek berjalan dengan berkesan.</p>
+                </div>
+                <div class="support-item">
+                    <h4>BANTUAN & GERAN</h4>
+                    <p>Bantuan peralatan, infrastruktur, input ternakan dan geran pembangunan ladang.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
