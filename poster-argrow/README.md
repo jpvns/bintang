@@ -1,58 +1,37 @@
 # Poster Argrow A1
 
-Poster **MAKANAN KITA, TANGGUNGJAWAB KITA** — saiz A1 Portrait (594 × 841 mm).
+Poster **MAKANAN KITA TANGGUNGJAWAB KITA** — saiz A1 Portrait (594 × 841 mm).
 
-## Cara buka (PILIH SATU)
+## Cara buka (paling mudah)
 
-### A — Telefon / Komputer (paling mudah)
-1. Buka fail **`index.html`** — ada butang besar **Buka Poster** dan **Cetak PDF**
-2. Atau buka **`print.html`** — panduan cetak langkah demi langkah
+### Di internet (telefon / komputer)
+Buka pautan ini dalam **Chrome** atau **Edge**:
 
-### B — Dua klik fail
-- Windows/Mac: pergi folder `poster-argrow` → klik dua kali **`index.html`**
-- Pastikan dibuka dalam **Chrome** atau **Edge** (bukan dalam app WhatsApp/Telegram)
+**https://jpvns.github.io/bintang/poster-argrow/**
 
-### C — Jika butang tak berfungsi
-1. Klik kanan `poster-argrow-a1.html` → **Open with** → **Google Chrome**
-2. Atau seret fail ke tetingkap Chrome
+Kemudian tekan **Buka Poster Penuh** atau **Cetak / Simpan PDF**.
 
-## Fail utama
-
+### Fail terus
 | Fail | Fungsi |
 |------|--------|
 | `index.html` | **MULA DI SINI** — pratonton + butang cetak |
-| `print.html` | Halaman butang cetak ringkas |
-| `poster-argrow-a1.html` | Poster A1 penuh |
+| `poster-a1-kad.html` | Poster A1 (versi kad / layout anda) |
+| `print.html` | Panduan cetak ringkas |
+| `poster-argrow-a1.html` | Poster A1 versi reka bentuk lama |
 
-## Cara guna
+## Cara cetak PDF A1
 
-1. Salin gambar anda ke folder `assets/`:
+1. Buka `poster-a1-kad.html` dalam Chrome
+2. Tekan `Ctrl+P` / `Cmd+P`
+3. Destinasi: **Save as PDF**
+4. Saiz kertas: **A1** (atau Custom 594 × 841 mm)
+5. Margin: **None**, Skala: **100%**
+6. Centang **Background graphics**
 
-| Fail | Kandungan |
-|------|-----------|
-| `logo-argrow.png` | Logo Argrow (hijau) |
-| `logo-jpvns.png` | Logo JPVNS |
-| `foto-adib.jpg` | Foto usahawan + anak biri-biri |
-| `produk-yani.jpg` | Birri Yani / produk emas |
-| `ladang.jpg` | Ladang / biri-biri |
-| `premis.jpg` | Papan premis / Argrow Food |
-| `qr.png` | QR code (pilihan) |
+## Nota gambar
 
-2. Dalam `poster-argrow-a1.html`, ganti placeholder dengan tag `<img src="assets/...">` (lihat komen dalam fail).
+Placeholder masih ada untuk:
+- Gambar Encik Adib
+- Gambar Puan Nur Azrin
 
-3. **Cetak PDF A1:**
-   - Chrome → Buka fail HTML → `Ctrl+P` / `Cmd+P`
-   - Destinasi: **Save as PDF**
-   - Saiz kertas: **A1** (atau Custom 594 × 841 mm)
-   - Margin: **None**
-   - Skala: **100%**
-   - Centang **Background graphics**
-
-4. Hantar PDF ke percetakan (300 DPI jika boleh).
-
-## Palet warna Argrow
-
-- Hijau Argrow: `#5daa3a`
-- Emas produk: `#d4a82a`
-- Hitam premium: `#141414`
-- Navy JPVNS: `#0d2b5e`
+Ganti kotak bertanda `[ Letak Gambar ... ]` dengan tag `<img src="...">` bila gambar sedia.
